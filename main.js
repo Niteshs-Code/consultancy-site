@@ -117,3 +117,33 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+
+  
+  // Mobile Menu Toggle
+  const toggleBtn = document.getElementById('mobileToggleBtn');
+  const navMenu = document.getElementById('navLinksMenu');
+
+  if (toggleBtn && navMenu) {
+    toggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('show-mobile');
+      
+      const icon = toggleBtn.querySelector('i');
+      if (icon) {
+        if (navMenu.classList.contains('show-mobile')) {
+          icon.className = 'fa-solid fa-xmark';
+        } else {
+          icon.className = 'fa-solid fa-bars';
+        }
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        navMenu.classList.remove('show-mobile');
+        const icon = toggleBtn.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      }
+    });
+  }

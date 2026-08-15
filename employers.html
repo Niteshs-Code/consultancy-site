@@ -11,16 +11,32 @@
 <body style="background-color: #f8fafc;">
 
   <!-- Navbar -->
-  <nav class="navbar scrolled" id="navbar">
-    <a href="index.html" class="logo">Apex<span>Talent</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="jobs.html">Find Jobs</a></li>
-      <li><a href="employers.html" class="active">For Employers</a></li>
-      <li><a href="contact.html">Contact Us</a></li>
-      <li><a href="tel:8595460058" class="btn btn-emerald" style="padding: 8px 18px;"><i class="fa-solid fa-phone"></i> Call Now</a></li>
-    </ul>
-  </nav>
+  <header class="site-header">
+  <div class="nav-container">
+    
+    <!-- Logo -->
+    <a href="index.html" class="brand-logo">
+      <i class="fa-solid fa-briefcase"></i>
+      <span>Apex<span class="highlight">Talent</span></span>
+    </a>
+
+    <!-- Mobile Hamburger Icon -->
+    <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- Links -->
+    <div class="nav-links" id="navLinksMenu">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="jobs.html" class="nav-link">Find Jobs</a>
+      <a href="employers.html" class="nav-link">For Employers</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="contact.html" class="nav-btn">Post a Job</a>
+    </div>
+
+  </div>
+</header>
 
   <!-- Page Header -->
   <header style="background: linear-gradient(135deg, var(--primary-navy) 0%, var(--accent-emerald) 100%); padding: 140px 5% 60px; color: #fff; text-align: center;">
