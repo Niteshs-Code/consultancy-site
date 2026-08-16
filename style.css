@@ -794,3 +794,130 @@ body {
   .about-hero p { font-size: 0.98rem; }
   .about-section { padding: 50px 5%; }
 }
+
+
+/* ==========================================================================
+   RESPONSIVE FIXES FOR FILTER FORM & CONSULTATION FORM
+   ========================================================================== */
+
+/* Prevent Horizontal Scrolling Page-wide */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Fix Glass Cards Container overflow */
+.glass-card, 
+.glass-card-dark {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Desktop & Mobile Input Sizing Safety */
+.glass-card form input,
+.glass-card form select,
+.glass-card form button,
+.glass-card-dark form input,
+.glass-card-dark form textarea,
+.glass-card-dark form button {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* --------------------------------------------------------------------------
+   Media Queries: Mobile & Tablet Fixes (768px & below)
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Fix Filter Search Bar Overlap */
+  .glass-card {
+    padding: 16px !important;
+    margin-bottom: 24px !important;
+  }
+  
+  .glass-card form {
+    grid-template-columns: 1fr !important; /* Stack all inputs in single column */
+    gap: 12px !important;
+  }
+  
+  .glass-card form button {
+    height: 48px !important;
+    width: 100% !important;
+  }
+
+  /* 2. Fix Request Talent Consultation Form Overlap */
+  .glass-card-dark {
+    padding: 24px 16px !important;
+  }
+
+  .glass-card-dark form {
+    grid-template-columns: 1fr !important; /* Stack 2-column inputs into 1 column */
+    gap: 14px !important;
+  }
+
+  .glass-card-dark form textarea,
+  .glass-card-dark form button {
+    grid-column: span 1 !important; /* Reset full width span for single column */
+    width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   STATS BAR MOBILE RESPONSIVE FIX
+   ========================================================================== */
+
+.stats-bar {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+  gap: 24px !important;
+  padding: 32px 24px !important;
+  text-align: center !important;
+}
+
+.stat-item {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.stat-item h2 {
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: #2563eb !important;
+  margin-bottom: 6px !important;
+  line-height: 1 !important;
+}
+
+.stat-item p {
+  font-size: 0.95rem !important;
+  color: #64748b !important;
+  margin: 0 !important;
+  font-weight: 500 !important;
+}
+
+/* Mobile Screen Specific (< 768px) */
+@media screen and (max-width: 768px) {
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr) !important; /* 2x2 Clean Grid on Mobile */
+    gap: 20px 12px !important;
+    padding: 24px 16px !important;
+    margin-top: 20px !important;
+  }
+
+  .stat-item h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .stat-item p {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Extra Small Screens (< 400px) */
+@media screen and (max-width: 400px) {
+  .stats-bar {
+    grid-template-columns: 1fr !important; /* Single column stack */
+    gap: 16px !important;
+  }
+}
